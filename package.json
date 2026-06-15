@@ -1,0 +1,32 @@
+{
+  "name": "project-sentinel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Resilience monitoring platform: chaos injection, health monitoring, and incident recording.",
+  "workspaces": [
+    "app",
+    "services/*",
+    "scripts"
+  ],
+  "scripts": {
+    "dev:app": "npm run dev --workspace app",
+    "dev:services": "npm-run-all --parallel dev:monitor dev:recorder",
+    "dev:monitor": "npm run dev --workspace @sentinel/health-monitor",
+    "dev:recorder": "npm run dev --workspace @sentinel/incident-recorder",
+    "chaos": "npm run start --workspace @sentinel/scripts",
+    "status": "npm run status --workspace @sentinel/scripts --",
+    "build": "npm-run-all --serial build:*",
+    "build:app": "npm run build --workspace app",
+    "build:services": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

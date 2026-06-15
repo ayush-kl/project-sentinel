@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.next/
+out/
+*.tsbuildinfo
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Vercel (local link/build artifacts — never commit)
+.vercel
+
+# Logs (keep docs/incident-history.log tracked as the canonical history)
+*.log
+
+# Transient runtime state
+docs/system-status.json
+.chaos-backups/
+!docs/incident-history.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/

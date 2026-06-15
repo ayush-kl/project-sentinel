@@ -1,0 +1,19 @@
+# Project Sentinel — Incident History
+# Append-only log. Format: <ISO-8601 timestamp> [SEVERITY] <service> :: <detail>
+# Severities: INFO | WARN | CRITICAL
+# Written by services/incident-recorder. Do not hand-edit.
+2026-06-15T15:08:11.172Z [INFO] system :: dashboard status set to operational — all clear
+2026-06-15T15:08:48.672Z [WARN] system :: dashboard status set to investigating — analyzing services/error.log
+2026-06-15T15:25:16.454Z [CRITICAL] auth-api :: health check failed — target is DOWN
+2026-06-15T15:25:18.258Z [CRITICAL] payments-api :: health check failed — target is DOWN
+2026-06-15T15:25:22.268Z [CRITICAL] search-api :: health check failed — target is DOWN
+
+2026-06-15T15:25:24.263Z [CRITICAL] auth-api :: health check failed — target is DOWN
+
+2026-06-15T15:25:26.263Z [CRITICAL] search-api :: health check failed — target is DOWN
+2026-06-15T15:25:28.266Z [INFO] auth-api :: target recovered — health check passing
+2026-06-15T15:25:30.270Z [INFO] search-api :: target recovered — health check passing
+2026-06-15T16:04:19.923Z [INFO] payments-api :: resolved by Claude — confirmed healthy; closing orphaned incident
+2026-06-15T16:05:01.255Z [INFO] system :: dashboard status set to operational — incident resolved
+2026-06-15T16:16:52.058Z [CRITICAL] search-api :: health check failed — target is DOWN
+2026-06-15T16:17:09.386Z [INFO] search-api :: reconciled on startup — target healthy, closing stale incident
